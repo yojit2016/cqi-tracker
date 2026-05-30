@@ -1,15 +1,7 @@
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import ThemeToggle from '../common/ThemeToggle';
-
-const navItems = [
-  { label: 'Dashboard', path: '/dashboard' },
-  { label: 'CQI Timeline', path: '/timeline' },
-  { label: 'Corrective Actions', path: '/corrective-actions' },
-  { label: 'Analytics', path: '/analytics' },
-  { label: 'Reports', path: '/reports' },
-  { label: 'Settings', path: '/settings' },
-];
+import { navigationItems } from '../../config/navigation';
 
 const Sidebar = ({ mobileOpen, onClose }) => {
   return (
@@ -34,7 +26,7 @@ const Sidebar = ({ mobileOpen, onClose }) => {
         </button>
       </div>
       <nav className="mt-10 flex flex-col gap-2">
-        {navItems.map((item) => (
+        {navigationItems.map((item) => (
           <NavLink
             key={item.path}
             to={item.path}

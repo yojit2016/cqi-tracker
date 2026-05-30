@@ -1,37 +1,7 @@
 import { motion } from 'framer-motion';
 import KPICard from '../../components/common/KPICard';
 import BrandEdge from '../../components/common/BrandEdge';
-
-const kpiCards = [
-  {
-    title: 'Quality Index Score',
-    value: '84.6%',
-    delta: '+2.4%',
-    meta: 'vs Last Sem: 82.2%',
-    status: 'positive',
-  },
-  {
-    title: 'Open Actions',
-    value: '12 Active',
-    delta: '4 Due',
-    meta: '6 resolved this wk',
-    status: 'neutral',
-  },
-  {
-    title: 'Audit Compliance',
-    value: '92.4%',
-    delta: '-1.2%',
-    meta: 'Target: 95.0%',
-    status: 'negative',
-  },
-  {
-    title: 'NBA Prep Stage',
-    value: 'Step 3 / 6',
-    delta: 'Self Assessment',
-    meta: 'Draft in progress',
-    status: 'positive',
-  },
-];
+import { kpiCards, quickActions, recentActivity } from '../../data/dashboardData';
 
 const DashboardPage = () => {
   return (
@@ -77,12 +47,19 @@ const DashboardPage = () => {
               </div>
             </div>
             <div className="mt-6 flex flex-col gap-3">
-              <button className="rounded-2xl bg-primary px-4 py-3 text-sm font-semibold text-white transition duration-200 hover:bg-primary-hover">
-                ⚡ Initiate Corrective Action
-              </button>
-              <button className="rounded-2xl border border-border bg-surface px-4 py-3 text-sm font-semibold text-text-primary transition duration-200 hover:border-primary hover:text-primary">
-                📋 Generate Department PDF Audit
-              </button>
+              {quickActions.map((action) => (
+                <button
+                  key={action.label}
+                  type="button"
+                  className={`rounded-2xl px-4 py-3 text-sm font-semibold transition duration-200 ${
+                    action.variant === 'primary'
+                      ? 'bg-primary text-white hover:bg-primary-hover'
+                      : 'border border-border bg-surface text-text-primary hover:border-primary hover:text-primary'
+                  }`}
+                >
+                  {action.label}
+                </button>
+              ))}
             </div>
           </div>
           <div className="rounded-3xl bg-surface p-6 shadow-md border border-border">
@@ -93,20 +70,7 @@ const DashboardPage = () => {
               </div>
             </div>
             <ul className="mt-6 space-y-4">
-              {[
-                {
-                  title: 'Gap Resolved: CO-4 Mapping',
-                  detail: 'Computer Eng. Dept. · Just now',
-                },
-                {
-                  title: 'Audit Log: Syllabus gap identified',
-                  detail: 'Information Tech. · 2 hrs ago',
-                },
-                {
-                  title: 'Accreditation milestone completed',
-                  detail: 'NBA Stage 2 approved · Yesterday',
-                },
-              ].map((item) => (
+              {recentActivity.map((item) => (
                 <li key={item.title} className="rounded-3xl bg-surface-hover p-4">
                   <p className="font-semibold text-text-primary">{item.title}</p>
                   <p className="mt-1 text-sm text-text-secondary">{item.detail}</p>
