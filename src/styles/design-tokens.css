@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap');
+
 :root {
   color-scheme: light;
   --font-headings: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -10,15 +12,17 @@
   --fw-bold: 700;
   --fw-extrabold: 800;
 
-  --space-2xs: 0.25rem;
-  --space-xs: 0.5rem;
-  --space-sm: 0.75rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
+  /* Spacing Grid (4px Base Grid) */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
 
+  /* Border Radii system */
   --radius-factor: 1;
   --radius-xs: calc(4px * var(--radius-factor));
   --radius-sm: calc(6px * var(--radius-factor));
@@ -27,59 +31,68 @@
   --radius-xl: calc(24px * var(--radius-factor));
   --radius-full: 9999px;
 
+  /* Elevations & Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.08);
-  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.1);
-  --shadow-focus: 0 0 0 4px rgba(183, 32, 46, 0.18);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.15), 0 8px 10px -6px rgba(15, 23, 42, 0.1);
+  --shadow-focus: 0 0 0 4px rgba(160, 30, 37, 0.18);
   --shadow-focus-secondary: 0 0 0 4px rgba(217, 119, 6, 0.22);
 
+  /* Easing and Transitions */
   --transition-fast: 0.12s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.38s cubic-bezier(0.4, 0, 0.2, 1);
 
-  --color-primary: #b7202e;
-  --color-primary-hover: #931926;
-  --color-primary-active: #78141e;
-  --color-primary-soft: #ffd5d9;
-  --color-primary-soft-border: #d22637;
-  --color-vitality: #ed1c24;
-  --color-secondary: #d97706;
-  --color-secondary-hover: #d57e1b;
-  --color-secondary-active: #b25f00;
-  --color-secondary-soft: #f6cd9f;
+  /* Brand Primary Colors */
+  --color-primary: #A01E25;
+  --color-primary-hover: #78141E;
+  --color-primary-active: #78141E;
+  --color-primary-soft: #FFD5D9;
+  --color-primary-soft-border: #D93843;
+  --color-vitality: #ED1C24;
 
-  --color-background: #f8fafc;
-  --color-surface: #ffffff;
-  --color-surface-hover: #f1f5f9;
-  --color-surface-active: #e2e8f0;
+  /* Brand Secondary Colors */
+  --color-secondary: #D97706;
+  --color-secondary-hover: #BD6704;
+  --color-secondary-active: #B56406;
+  --color-secondary-soft: #F5C690;
 
-  --color-text-primary: #231f20;
-  --color-text-secondary: #58595b;
-  --color-text-tertiary: #808285;
-  --color-text-on-primary: #ffffff;
+  /* Surface and Backgrounds */
+  --color-background: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #F1F5F9;
+  --color-surface-active: #F1F5F9;
 
-  --color-border: #c5cacf;
-  --color-border-hover: #cbd5e1;
-  --color-border-active: #94a3b8;
+  /* Layout Borders */
+  --color-border: #E2E8F0;
+  --color-border-hover: #CBD5E1;
+  --color-border-active: #94A3B8;
 
+  /* Core UI Typography */
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #94A3B8;
+  --color-text-on-primary: #FFFFFF;
+
+  /* Semantic Alert Tokens */
   --color-success: #059669;
-  --color-success-soft: #ecfdf5;
-  --color-success-border: #a7f3d0;
+  --color-success-soft: #ECFDF5;
+  --color-success-border: #A7F3D0;
   --color-success-text: #047857;
 
-  --color-warning: #d97706;
-  --color-warning-soft: #fef3c7;
-  --color-warning-border: #fde68a;
-  --color-warning-text: #b45309;
+  --color-warning: #D97706;
+  --color-warning-soft: #FEF3C7;
+  --color-warning-border: #FDE68A;
+  --color-warning-text: #B45309;
 
-  --color-error: #dc2626;
-  --color-error-soft: #fef2f2;
-  --color-error-border: #fee2e2;
-  --color-error-text: #b91c1c;
+  --color-error: #DC2626;
+  --color-error-soft: #FEF2F2;
+  --color-error-border: #FEE2E2;
+  --color-error-text: #B91C1C;
 
-  --color-info: #2563eb;
-  --color-info-soft: #eff6ff;
-  --color-info-border: #bfdbfe;
-  --color-info-text: #1d4ed8;
+  --color-info: #2563EB;
+  --color-info-soft: #EFF6FF;
+  --color-info-border: #BFDBFE;
+  --color-info-text: #1D4ED8;
 }
