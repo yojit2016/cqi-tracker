@@ -254,7 +254,14 @@ const DashboardPage = () => {
                 <tr
                   key={action.id}
                   onClick={() => navigate('/corrective-actions')}
-                  className="hover:bg-surface-hover/40 cursor-pointer transition duration-fast"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      navigate('/corrective-actions');
+                    }
+                  }}
+                  className="hover:bg-surface-hover/40 cursor-pointer transition duration-fast focus:outline-none focus:bg-surface-hover/60 focus:ring-1 focus:ring-primary"
                 >
                   <td className="py-3 px-4 font-bold text-primary">{action.id}</td>
                   <td className="py-3 px-4 text-text-primary font-medium">{action.title}</td>
