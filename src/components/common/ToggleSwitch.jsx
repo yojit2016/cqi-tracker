@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const ToggleSwitch = ({ checked, onChange, label, className = '' }) => {
   return (
     <label className={`flex items-center gap-3 cursor-pointer select-none ${className}`}>
-      <div className="relative">
+      <div className="relative rounded-full focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 dark:focus-within:ring-offset-[#161E2E] outline-none">
         <input
           type="checkbox"
           checked={checked}
