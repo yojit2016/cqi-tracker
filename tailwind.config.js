@@ -57,6 +57,7 @@ export default {
           border: 'var(--color-info-border)',
           text: 'var(--color-info-text)',
         },
+        vitality: 'var(--color-vitality)',
         border: 'var(--color-border)',
         muted: 'var(--color-border-hover)',
       },
@@ -65,6 +66,8 @@ export default {
         md: 'var(--shadow-md)',
         lg: 'var(--shadow-lg)',
         xl: 'var(--shadow-xl)',
+        focus: 'var(--shadow-focus)',
+        'focus-secondary': 'var(--shadow-focus-secondary)',
       },
       transitionTimingFunction: {
         normal: 'cubic-bezier(0.4, 0, 0.2, 1)',
@@ -75,6 +78,7 @@ export default {
         slow: '380ms',
       },
       borderRadius: {
+        xs: 'var(--radius-xs)',
         sm: 'var(--radius-sm)',
         md: 'var(--radius-md)',
         lg: 'var(--radius-lg)',

@@ -1,29 +1,30 @@
 html[data-theme="dark"] {
   color-scheme: dark;
-  --color-background: #0f172a;
-  --color-surface: #1e293b;
-  --color-surface-hover: #334155;
-  --color-surface-active: #475569;
-  --color-text-primary: #f8fafc;
-  --color-text-secondary: #cbd5e1;
-  --color-text-tertiary: #94a3b8;
-  --color-border: #334155;
-  --color-border-hover: #475569;
-  --color-border-active: #64748b;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
-  --color-success-soft: rgba(16, 185, 129, 0.1);
-  --color-success-border: rgba(16, 185, 129, 0.3);
-  --color-success-text: #34d399;
-  --color-warning-soft: rgba(245, 158, 11, 0.1);
-  --color-warning-border: rgba(245, 158, 11, 0.3);
-  --color-warning-text: #fbbf24;
-  --color-error-soft: rgba(239, 68, 68, 0.1);
-  --color-error-border: rgba(239, 68, 68, 0.3);
-  --color-error-text: #fca5a5;
-  --color-info-soft: rgba(59, 130, 246, 0.1);
-  --color-info-border: rgba(59, 130, 246, 0.3);
-  --color-info-text: #93c5fd;
+  --color-background: #0B0F19;
+  --color-surface: #161E2E;
+  --color-surface-hover: #1F293D;
+  --color-surface-active: #2D3748;
+  --color-border: #243048;
+  --color-border-hover: #2D3B58;
+  --color-border-active: #4F5E7B;
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #CBD5E1;
+  --color-text-tertiary: #94A3B8;
+
+  /* Semantic Alerts for Dark Mode (translucent backgrounds with crisp text) */
+  --color-success-soft: rgba(5, 150, 105, 0.15);
+  --color-success-border: rgba(5, 150, 105, 0.3);
+  --color-success-text: #34D399;
+
+  --color-warning-soft: rgba(217, 119, 6, 0.15);
+  --color-warning-border: rgba(217, 119, 6, 0.3);
+  --color-warning-text: #FBBF24;
+
+  --color-error-soft: rgba(220, 38, 38, 0.15);
+  --color-error-border: rgba(220, 38, 38, 0.3);
+  --color-error-text: #FCA5A5;
+
+  --color-info-soft: rgba(37, 99, 235, 0.15);
+  --color-info-border: rgba(37, 99, 235, 0.3);
+  --color-info-text: #93C5FD;
 }

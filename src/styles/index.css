@@ -91,3 +91,67 @@ textarea {
 .shadow-lg {
   box-shadow: var(--shadow-lg);
 }
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-active);
+}
+
+/* Native Print Styles for A4 Exports */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12px !important;
+  }
+  
+  aside,
+  header,
+  nav,
+  button,
+  .no-print,
+  .no-print-container,
+  .theme-toggle-box {
+    display: none !important;
+  }
+  
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: auto !important;
+    width: 100% !important;
+  }
+
+  .md\:pl-72 {
+    padding-left: 0 !important;
+  }
+
+  .print-layout {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+    width: 100% !important;
+  }
+  
+  table {
+    page-break-inside: auto;
+  }
+  
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+}
+
