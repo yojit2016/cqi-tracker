@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCQIData } from '../../hooks/useCQIData';
-import StatusBadge from '../../components/common/StatusBadge';
 import Button from '../../components/common/Button';
 import InputField from '../../components/common/InputField';
 import SelectField from '../../components/common/SelectField';

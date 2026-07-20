@@ -72,7 +72,6 @@ const PerformanceHeatmap = ({ className = '' }) => {
                     <div
                       key={monthIdx}
                       onMouseEnter={(e) => {
-                        const rect = e.currentTarget.getBoundingClientRect();
                         setHoveredCell({
                           dept: dept.name,
                           month: MONTHS[monthIdx],

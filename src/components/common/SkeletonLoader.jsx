@@ -1,8 +1,4 @@
 const SkeletonLoader = ({ type = 'card', count = 1, className = '' }) => {
-  const Shimmer = () => (
-    <div className="animate-pulse bg-slate-200 dark:bg-slate-800 rounded-md" />
-  );
-
   const renderSkeleton = () => {
     switch (type) {
       case 'row':

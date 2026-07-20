@@ -138,9 +138,8 @@ const DashboardPage = () => {
         }`}
       />
 
-      {/* KPI Cards Grid (AOS fade-in) */}
       <section data-aos="fade-up" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {kpis.map((kpi, idx) => (
+        {kpis.map((kpi) => (
           <KPICard key={kpi.title} {...kpi} />
         ))}
       </section>

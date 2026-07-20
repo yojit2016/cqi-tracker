@@ -15,8 +15,8 @@ const SettingsPage = () => {
   // Profile Form State
   const [profileName, setProfileName] = useState('Dr. Sanjay Kumar');
   const [profileEmail, setProfileEmail] = useState('sanjay.k@somaiya.edu');
-  const [profileDept, setProfileDept] = useState('Computer Engineering');
-  const [profileRole, setProfileRole] = useState('Dean / Quality Assurance Lead');
+  const profileDept = 'Computer Engineering';
+  const profileRole = 'Dean / Quality Assurance Lead';
 
   // Notifications State
   const [emailEnabled, setEmailEnabled] = useState(notificationPreference.emailEnabled ?? true);

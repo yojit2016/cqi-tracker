@@ -40,6 +40,7 @@ export const CQIDataProvider = ({ children }) => {
         setTimelineEvents(parsed.timelineEvents || []);
         setNotificationPreference(parsed.notificationPreference || defaultNotificationPreference);
       } catch (e) {
+        // eslint-disable-next-line no-console
         console.error('Error loading localStorage data', e);
         seedDefaultData();
       }

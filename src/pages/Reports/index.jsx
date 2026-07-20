@@ -8,7 +8,7 @@ import DateRangeFilter from '../../components/filters/DateRangeFilter';
 import StatusFilter from '../../components/filters/StatusFilter';
 import StatusBadge from '../../components/common/StatusBadge';
 import { mockDepartments, mockUsers } from '../../data/mockCQIData';
-import { Printer, Download, FileSpreadsheet, Calendar, GraduationCap } from 'lucide-react';
+import { Printer, FileSpreadsheet, Calendar, GraduationCap } from 'lucide-react';
 
 const ReportsPage = () => {
   const { correctiveActions, selectedDept, setSelectedDept } = useCQIData();

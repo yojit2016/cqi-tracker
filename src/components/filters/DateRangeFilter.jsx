@@ -1,6 +1,5 @@
 const DateRangeFilter = ({ startDate, endDate, onChange, className = '' }) => {
   const handlePreset = (presetType) => {
-    const today = new Date();
     if (presetType === 'semester') {
       // Say, Jan 1 to Jul 31
       onChange('2026-01-01', '2026-07-31');
