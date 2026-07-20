@@ -77,7 +77,7 @@ const Sidebar = ({ mobileOpen, onClose }) => {
                 <NavLink
                   key={item.path}
                   to={item.path}
-                  className={`group relative flex items-center gap-3 rounded-md px-3.5 py-3.5 text-xs font-semibold select-none outline-none transition duration-fast ${
+                  className={`group relative flex items-center gap-3 rounded-md px-3.5 py-3.5 text-xs font-semibold select-none outline-none transition duration-fast focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-[#161E2E] focus:outline-none ${
                     isActive
                       ? 'text-white'
                       : 'text-text-secondary hover:text-text-primary hover:bg-surface-hover/60'
