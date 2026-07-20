@@ -51,7 +51,7 @@ const StatusFilter = ({ selected = [], onChange, className = '' }) => {
             key={status}
             type="button"
             onClick={() => handleToggle(status)}
-            className={`px-2.5 py-1 text-xs font-semibold rounded-full border transition-all duration-fast outline-none select-none ${getStyle(
+            className={`px-2.5 py-1 text-xs font-semibold rounded-full border transition-all duration-fast focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-[#161E2E] focus:outline-none select-none ${getStyle(
               status
             )}`}
           >
