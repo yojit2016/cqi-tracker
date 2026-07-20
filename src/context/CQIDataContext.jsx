@@ -36,9 +36,13 @@ export const CQIDataProvider = ({ children }) => {
     if (raw) {
       try {
         const parsed = JSON.parse(raw);
-        setCorrectiveActions(parsed.correctiveActions || []);
-        setTimelineEvents(parsed.timelineEvents || []);
-        setNotificationPreference(parsed.notificationPreference || defaultNotificationPreference);
+        if (parsed && typeof parsed === 'object' && Array.isArray(parsed.correctiveActions) && Array.isArray(parsed.timelineEvents)) {
+          setCorrectiveActions(parsed.correctiveActions);
+          setTimelineEvents(parsed.timelineEvents);
+          setNotificationPreference(parsed.notificationPreference || defaultNotificationPreference);
+        } else {
+          throw new Error('Malformed schema: missing correctiveActions or timelineEvents arrays');
+        }
       } catch (e) {
         // eslint-disable-next-line no-console
         console.error('Error loading localStorage data', e);
