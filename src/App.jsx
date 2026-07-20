@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
+import { CQIDataProvider } from './context/CQIDataContext';
 import DashboardLayout from './components/layout/DashboardLayout';
 import DashboardPage from './pages/Dashboard';
 import TimelinePage from './pages/Timeline';
@@ -11,20 +12,23 @@ import SettingsPage from './pages/Settings';
 function App() {
   return (
     <ThemeProvider>
-      <Routes>
-        <Route path="/" element={<DashboardLayout />}>
-          <Route index element={<Navigate to="dashboard" replace />} />
-          <Route path="dashboard" element={<DashboardPage />} />
-          <Route path="timeline" element={<TimelinePage />} />
-          <Route path="corrective-actions" element={<CorrectiveActionsPage />} />
-          <Route path="analytics" element={<AnalyticsPage />} />
-          <Route path="reports" element={<ReportsPage />} />
-          <Route path="settings" element={<SettingsPage />} />
-        </Route>
-        <Route path="*" element={<Navigate to="/dashboard" replace />} />
-      </Routes>
+      <CQIDataProvider>
+        <Routes>
+          <Route path="/" element={<DashboardLayout />}>
+            <Route index element={<Navigate to="dashboard" replace />} />
+            <Route path="dashboard" element={<DashboardPage />} />
+            <Route path="timeline" element={<TimelinePage />} />
+            <Route path="corrective-actions" element={<CorrectiveActionsPage />} />
+            <Route path="analytics" element={<AnalyticsPage />} />
+            <Route path="reports" element={<ReportsPage />} />
+            <Route path="settings" element={<SettingsPage />} />
+          </Route>
+          <Route path="*" element={<Navigate to="/dashboard" replace />} />
+        </Routes>
+      </CQIDataProvider>
     </ThemeProvider>
   );
 }
 
 export default App;
+
