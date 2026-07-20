@@ -258,7 +258,15 @@ const CorrectiveActionsPage = () => {
                     key={action.id}
                     layoutId={`card-${action.id}`}
                     whileHover={{ y: -3 }}
-                    className="group rounded-md border border-border bg-surface p-4 shadow-sm hover:shadow-md transition-all duration-fast relative cursor-pointer"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handleEditOpen(action);
+                      }
+                    }}
+                    onClick={() => handleEditOpen(action)}
+                    className="group rounded-md border border-border bg-surface p-4 shadow-sm hover:shadow-md transition-all duration-fast relative cursor-pointer focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-[#161E2E] focus:outline-none"
                   >
                     <div className="flex items-start justify-between gap-1.5">
                       <span className="text-[9px] font-bold text-primary">{action.id}</span>
@@ -267,7 +275,7 @@ const CorrectiveActionsPage = () => {
                       </span>
                     </div>
 
-                    <div onClick={() => handleEditOpen(action)} className="mt-2 space-y-1">
+                    <div className="mt-2 space-y-1">
                       <p className="font-bold text-xs text-text-primary group-hover:text-primary transition-colors leading-tight">
                         {action.title}
                       </p>
