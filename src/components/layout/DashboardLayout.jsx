@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
+import ErrorBoundary from '../common/ErrorBoundary';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { AnimatePresence } from 'framer-motion';
@@ -32,7 +33,9 @@ const DashboardLayout = () => {
         <main className="flex-grow bg-background px-4 pb-10 pt-6 md:px-8 xl:px-12">
           <div className="mx-auto max-w-[1700px]">
             <AnimatePresence mode="wait">
-              <Outlet key={location.pathname} />
+              <ErrorBoundary key={location.pathname}>
+                <Outlet />
+              </ErrorBoundary>
             </AnimatePresence>
           </div>
         </main>
