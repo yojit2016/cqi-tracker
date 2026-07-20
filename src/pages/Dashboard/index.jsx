@@ -8,7 +8,7 @@ import StatusBadge from '../../components/common/StatusBadge';
 import Button from '../../components/common/Button';
 import InputField from '../../components/common/InputField';
 import SelectField from '../../components/common/SelectField';
-import ActionModal from '../../components/feedback/ActionModal'; // will create in subsequent step
+import ActionModal from '../../components/feedback/ActionModal';
 import { mockUsers, mockDepartments } from '../../data/mockCQIData';
 import { Plus, Printer, FileText, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -138,8 +138,8 @@ const DashboardPage = () => {
         }`}
       />
 
-      {/* KPI Cards Grid */}
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {/* KPI Cards Grid (AOS fade-in) */}
+      <section data-aos="fade-up" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {kpis.map((kpi, idx) => (
           <KPICard key={kpi.title} {...kpi} />
         ))}
@@ -147,8 +147,8 @@ const DashboardPage = () => {
 
       {/* Main Workspace Layout split */}
       <div className="grid gap-6 lg:grid-cols-3">
-        {/* Line Chart Panel */}
-        <div className="lg:col-span-2 rounded-lg border border-border bg-surface p-6 shadow-sm">
+        {/* Line Chart Panel (AOS fade-right) */}
+        <div data-aos="fade-right" className="lg:col-span-2 rounded-lg border border-border bg-surface p-6 shadow-sm">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between mb-6">
             <div>
               <p className="text-[10px] font-bold uppercase tracking-wider text-text-secondary">OBE Attainment Trends</p>
@@ -166,8 +166,8 @@ const DashboardPage = () => {
 
         {/* Action Panel & Activity Sidebar */}
         <div className="space-y-6">
-          {/* Quick Actions Panel */}
-          <div className="rounded-lg border border-border bg-surface p-6 shadow-sm">
+          {/* Quick Actions Panel (AOS fade-left) */}
+          <div data-aos="fade-left" className="rounded-lg border border-border bg-surface p-6 shadow-sm">
             <p className="text-[10px] font-bold uppercase tracking-wider text-text-secondary">Quick Actions</p>
             <h4 className="text-lg font-bold text-text-primary tracking-tight mt-1 mb-4">Execute operations</h4>
             <div className="flex flex-col gap-2.5">
@@ -190,8 +190,8 @@ const DashboardPage = () => {
             </div>
           </div>
 
-          {/* Activity Feed sidebar */}
-          <div className="rounded-lg border border-border bg-surface p-6 shadow-sm">
+          {/* Activity Feed sidebar (AOS fade-left with delay) */}
+          <div data-aos="fade-left" data-aos-delay="100" className="rounded-lg border border-border bg-surface p-6 shadow-sm">
             <div className="flex items-center justify-between mb-4">
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-wider text-text-secondary">Activity Feed</p>
@@ -221,8 +221,8 @@ const DashboardPage = () => {
         </div>
       </div>
 
-      {/* Gaps / Action Table Registry */}
-      <section className="rounded-lg border border-border bg-surface p-6 shadow-sm overflow-hidden">
+      {/* Gaps / Action Table Registry (AOS fade-up) */}
+      <section data-aos="fade-up" className="rounded-lg border border-border bg-surface p-6 shadow-sm overflow-hidden">
         <div className="flex items-center justify-between mb-6">
           <div>
             <p className="text-[10px] font-bold uppercase tracking-wider text-text-secondary">Active Corrective Registry</p>

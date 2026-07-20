@@ -126,7 +126,7 @@ const ReportsPage = () => {
       </section>
 
       {/* Report Preview Document */}
-      <section className="rounded-lg border border-border bg-surface p-8 shadow-sm print-layout space-y-8 relative">
+      <section data-aos="fade-up" className="rounded-lg border border-border bg-surface p-8 shadow-sm print-layout space-y-8 relative">
         {/* Print Header (Only visible on print / styled beautifully) */}
         <div className="hidden print:flex items-center justify-between border-b-2 border-primary pb-4 mb-6">
           <div className="flex items-center gap-3">

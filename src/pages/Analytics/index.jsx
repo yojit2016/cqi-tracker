@@ -53,10 +53,9 @@ const AnalyticsPage = () => {
   };
 
   // Calculate department average score based on corrective action statuses
-  // resolved actions score 90%, in-progress score 75%, pending 60%, delayed 45%
   const calculateDeptAverage = (deptId) => {
     const deptActions = correctiveActions.filter((a) => a.departmentId === deptId);
-    if (deptActions.length === 0) return 80.0; // baseline default
+    if (deptActions.length === 0) return 80.0;
     
     const sum = deptActions.reduce((acc, curr) => {
       if (curr.status === 'resolved') return acc + 95;
@@ -89,8 +88,8 @@ const AnalyticsPage = () => {
         subtitle="Perform quality audit compliance checks and track outcomes"
       />
 
-      {/* Scoping Filters */}
-      <section className="rounded-lg border border-border bg-surface p-6 shadow-sm space-y-4">
+      {/* Scoping Filters (AOS fade-in) */}
+      <section data-aos="fade-up" className="rounded-lg border border-border bg-surface p-6 shadow-sm space-y-4">
         <h4 className="text-xs font-bold uppercase tracking-wider text-text-primary">Scope Boundaries & Diagnostic Filters</h4>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <DepartmentFilter selected={selectedDept} onChange={setSelectedDept} />
@@ -106,8 +105,8 @@ const AnalyticsPage = () => {
         </div>
       </section>
 
-      {/* KPI Stats overview row */}
-      <section className="grid gap-4 grid-cols-2 lg:grid-cols-4">
+      {/* KPI Stats overview row (AOS fade-in with delay) */}
+      <section data-aos="fade-up" data-aos-delay="100" className="grid gap-4 grid-cols-2 lg:grid-cols-4">
         <KPICard
           title="Total Audits"
           value={String(total)}
@@ -142,8 +141,8 @@ const AnalyticsPage = () => {
       <div className="grid gap-6 lg:grid-cols-3">
         {/* Left Big Panel: Trend Line and Heatmap */}
         <div className="lg:col-span-2 space-y-6">
-          {/* Line Chart */}
-          <div className="rounded-lg border border-border bg-surface p-6 shadow-sm">
+          {/* Line Chart (AOS fade-right) */}
+          <div data-aos="fade-right" className="rounded-lg border border-border bg-surface p-6 shadow-sm">
             <h3 className="text-sm font-bold text-text-primary uppercase tracking-wider mb-4 flex items-center gap-1.5">
               <TrendingUp className="w-4 h-4 text-primary" />
               Course Attainment outcome Trends
@@ -153,8 +152,8 @@ const AnalyticsPage = () => {
             </div>
           </div>
 
-          {/* Audit Heatmap */}
-          <div className="rounded-lg border border-border bg-surface p-6 shadow-sm">
+          {/* Audit Heatmap (AOS fade-right with delay) */}
+          <div data-aos="fade-right" data-aos-delay="100" className="rounded-lg border border-border bg-surface p-6 shadow-sm">
             <h3 className="text-sm font-bold text-text-primary uppercase tracking-wider mb-4 flex items-center gap-1.5">
               <BarChart3 className="w-4 h-4 text-secondary" />
               Compliance Density Grid
@@ -165,8 +164,8 @@ const AnalyticsPage = () => {
 
         {/* Right Panel: Doughnut and Comparison Bars */}
         <div className="space-y-6">
-          {/* Doughnut status distribution */}
-          <div className="rounded-lg border border-border bg-surface p-6 shadow-sm flex flex-col justify-between">
+          {/* Doughnut status distribution (AOS fade-left) */}
+          <div data-aos="fade-left" className="rounded-lg border border-border bg-surface p-6 shadow-sm flex flex-col justify-between">
             <div>
               <h3 className="text-sm font-bold text-text-primary uppercase tracking-wider mb-4 flex items-center gap-1.5">
                 <CheckCircle className="w-4 h-4 text-success" />
@@ -181,8 +180,8 @@ const AnalyticsPage = () => {
             </div>
           </div>
 
-          {/* Department Benchmark comparison */}
-          <div className="rounded-lg border border-border bg-surface p-6 shadow-sm flex flex-col justify-between">
+          {/* Department Benchmark comparison (AOS fade-left with delay) */}
+          <div data-aos="fade-left" data-aos-delay="100" className="rounded-lg border border-border bg-surface p-6 shadow-sm flex flex-col justify-between">
             <div>
               <h3 className="text-sm font-bold text-text-primary uppercase tracking-wider mb-4 flex items-center gap-1.5">
                 <Clock className="w-4 h-4 text-info" />
