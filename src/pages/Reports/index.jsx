@@ -44,19 +44,36 @@ const ReportsPage = () => {
       return;
     }
 
+    const sanitizeCell = (val) => {
+      if (val === undefined || val === null) return '';
+      const str = String(val);
+      if (str.startsWith('=') || str.startsWith('+') || str.startsWith('-') || str.startsWith('@')) {
+        return `'${str}`;
+      }
+      return str;
+    };
+
     const headers = ['Action ID', 'Title', 'Outcome Gap', 'Course', 'Department', 'Status', 'Priority', 'Due Date', 'Created At', 'Resolved At'];
     
     const rows = scopedActions.map((a) => {
-      const escapedTitle = `"${a.title.replace(/"/g, '""')}"`;
-      const escapedCourse = `"${a.courseName.replace(/"/g, '""')}"`;
+      const titleClean = sanitizeCell(a.title);
+      const courseClean = sanitizeCell(a.courseName);
+      const outcomeClean = sanitizeCell(a.outcomeId);
+      const deptClean = sanitizeCell(a.departmentId);
+      const statusClean = sanitizeCell(a.status);
+      const priorityClean = sanitizeCell(a.priority);
+
+      const escapedTitle = `"${titleClean.replace(/"/g, '""')}"`;
+      const escapedCourse = `"${courseClean.replace(/"/g, '""')}"`;
+      
       return [
         a.id,
         escapedTitle,
-        a.outcomeId,
+        outcomeClean,
         escapedCourse,
-        a.departmentId,
-        a.status,
-        a.priority,
+        deptClean,
+        statusClean,
+        priorityClean,
         a.dueDate,
         a.createdAt,
         a.resolvedAt || 'N/A',
