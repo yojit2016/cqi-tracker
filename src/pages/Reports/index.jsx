@@ -182,7 +182,7 @@ const ReportsPage = () => {
         {/* Report Metadata */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 bg-slate-50 dark:bg-slate-900/30 rounded-lg p-4 border border-border">
           <div className="text-xs">
-            <span className="text-[9px] uppercase font-bold text-text-tertiary tracking-wider block">Scope Scope</span>
+            <span className="text-[9px] uppercase font-bold text-text-tertiary tracking-wider block">Department Scope</span>
             <p className="font-bold text-text-primary mt-1">{getDeptLabel()}</p>
           </div>
           <div className="text-xs">
