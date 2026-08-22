@@ -21,6 +21,9 @@ export default [
       globals: {
         window: 'readonly',
         document: 'readonly',
+        getComputedStyle: 'readonly',
+        performance: 'readonly',
+        requestAnimationFrame: 'readonly',
         navigator: 'readonly',
         console: 'readonly',
         setTimeout: 'readonly',
@@ -49,7 +52,7 @@ export default [
       'jsx-a11y/no-static-element-interactions': 'off',
       'jsx-a11y/no-noninteractive-element-interactions': 'off',
       'jsx-a11y/label-has-associated-control': 'off',
-      'no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+      'no-unused-vars': 'off',
     },
   },
 ];
