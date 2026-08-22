@@ -26,9 +26,9 @@ const DashboardLayout = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-background text-text-primary">
+    <div className="flex min-h-screen bg-background text-text-primary">
       <Sidebar mobileOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-      <div className="md:pl-72 flex flex-col min-h-screen">
+      <div className="flex-1 min-w-0 flex flex-col min-h-screen">
         <Navbar onOpenSidebar={() => setSidebarOpen(true)} />
         <main className="flex-grow bg-background px-4 pb-10 pt-6 md:px-8 xl:px-12">
           <div className="mx-auto max-w-[1700px]">
