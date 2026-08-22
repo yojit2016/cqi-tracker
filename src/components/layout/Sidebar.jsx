@@ -26,7 +26,7 @@ const Sidebar = ({ mobileOpen, onClose }) => {
           width: collapsed ? '80px' : '288px',
         }}
         transition={{ type: 'spring', stiffness: 300, damping: 28 }}
-        className={`fixed inset-y-0 left-0 z-40 overflow-y-auto border-r border-border bg-surface px-4 py-6 shadow-lg shadow-slate-900/5 dark:shadow-none flex flex-col justify-between md:static md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-40 overflow-y-auto border-r border-border bg-surface px-4 py-6 shadow-lg shadow-slate-900/5 dark:shadow-none flex flex-col justify-between md:sticky md:top-0 md:h-screen md:translate-x-0 flex-shrink-0 ${
           mobileOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
