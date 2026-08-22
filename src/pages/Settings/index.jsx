@@ -85,7 +85,7 @@ const SettingsPage = () => {
           <form onSubmit={handleSaveSettings} className="rounded-lg border border-border bg-surface p-6 shadow-sm space-y-4">
             <div className="flex items-center gap-2 pb-2 border-b border-border">
               <User className="w-4 h-4 text-primary" />
-              <h3 className="text-xs font-bold uppercase tracking-wider text-text-primary">Academic Profile Profile</h3>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-text-primary">Academic Profile</h3>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
