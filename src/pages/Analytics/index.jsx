@@ -91,7 +91,7 @@ const AnalyticsPage = () => {
       {/* Scoping Filters (AOS fade-in) */}
       <section data-aos="fade-up" className="rounded-lg border border-border bg-surface p-6 shadow-sm space-y-4">
         <h4 className="text-xs font-bold uppercase tracking-wider text-text-primary">Scope Boundaries & Diagnostic Filters</h4>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-start">
           <DepartmentFilter selected={selectedDept} onChange={setSelectedDept} />
           <DateRangeFilter
             startDate={startDate}

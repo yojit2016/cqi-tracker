@@ -14,36 +14,36 @@ const DateRangeFilter = ({ startDate, endDate, onChange, className = '' }) => {
   return (
     <div className={`flex flex-col gap-2 ${className}`}>
       <span className="text-[10px] font-bold uppercase tracking-wider text-text-secondary">Date Interval Scope</span>
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-        <div className="flex items-center gap-1">
+      <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-1.5 flex-wrap sm:flex-nowrap">
           <input
             type="date"
             value={startDate}
             onChange={(e) => onChange(e.target.value, endDate)}
-            className="rounded-md border border-border bg-surface px-2.5 py-1.5 text-xs text-text-primary outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+            className="w-full sm:w-auto min-w-0 flex-1 rounded-md border border-border bg-surface px-2.5 py-1.5 text-xs text-text-primary outline-none focus:border-primary focus:ring-1 focus:ring-primary"
             aria-label="Start date"
           />
-          <span className="text-xs text-text-tertiary">to</span>
+          <span className="text-xs font-medium text-text-tertiary">to</span>
           <input
             type="date"
             value={endDate}
             onChange={(e) => onChange(startDate, e.target.value)}
-            className="rounded-md border border-border bg-surface px-2.5 py-1.5 text-xs text-text-primary outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+            className="w-full sm:w-auto min-w-0 flex-1 rounded-md border border-border bg-surface px-2.5 py-1.5 text-xs text-text-primary outline-none focus:border-primary focus:ring-1 focus:ring-primary"
             aria-label="End date"
           />
         </div>
-        <div className="flex gap-1">
+        <div className="flex items-center gap-1.5 flex-wrap">
           <button
             type="button"
             onClick={() => handlePreset('semester')}
-            className="px-2 py-1.5 text-[10px] font-bold uppercase rounded-sm border border-border bg-surface-hover text-text-secondary hover:bg-surface transition"
+            className="px-2.5 py-1 text-[10px] font-bold uppercase rounded-sm border border-border bg-surface-hover text-text-secondary hover:bg-surface transition"
           >
             Sem Presets
           </button>
           <button
             type="button"
             onClick={() => handlePreset('year')}
-            className="px-2 py-1.5 text-[10px] font-bold uppercase rounded-sm border border-border bg-surface-hover text-text-secondary hover:bg-surface transition"
+            className="px-2.5 py-1 text-[10px] font-bold uppercase rounded-sm border border-border bg-surface-hover text-text-secondary hover:bg-surface transition"
           >
             Full Year
           </button>
@@ -51,7 +51,7 @@ const DateRangeFilter = ({ startDate, endDate, onChange, className = '' }) => {
             <button
               type="button"
               onClick={() => handlePreset('clear')}
-              className="px-2 py-1.5 text-[10px] font-bold uppercase rounded-sm border border-error/20 bg-error-soft text-error hover:opacity-85 transition"
+              className="px-2.5 py-1 text-[10px] font-bold uppercase rounded-sm border border-error/20 bg-error-soft text-error hover:opacity-85 transition"
             >
               Clear
             </button>
